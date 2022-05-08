@@ -21,4 +21,23 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Printf("%s\n", robots)
+
+	a := "start"
+	defer fmt.Println(a) // At this point an is already inserted into defer,
+	// so any value changes after this will not affect this a value
+	a = "end"
+
+	//http.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
+	//	writer.Write([]byte("Hello Go!"))
+	//})
+	//err = http.ListenAndServe(":8080", nil)
+	//if err != nil {
+	//	panic(err.Error())
+	//}
+
+	// order of execution
+	fmt.Println("Started")
+	defer fmt.Println("defer")
+	panic("Something went wrong")
+	fmt.Println("Ended")
 }
