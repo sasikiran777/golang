@@ -36,8 +36,21 @@ func main() {
 	//}
 
 	// order of execution
-	fmt.Println("Started")
-	defer fmt.Println("defer")
+	//fmt.Println("Started")
+	//defer fmt.Println("defer")
+	//panic("Something went wrong")
+	//fmt.Println("Ended")
+
+	fmt.Println("star")
+	panicker()
+	fmt.Println("end")
+}
+
+func panicker() {
+	defer func() {
+		if w := recover(); w != nil {
+			log.Println("Err", w)
+		}
+	}()
 	panic("Something went wrong")
-	fmt.Println("Ended")
 }
