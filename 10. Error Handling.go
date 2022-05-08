@@ -41,6 +41,7 @@ func main() {
 	//panic("Something went wrong")
 	//fmt.Println("Ended")
 
+	// panicker fails but still end statement will execute
 	fmt.Println("star")
 	panicker()
 	fmt.Println("end")
