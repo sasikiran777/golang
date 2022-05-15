@@ -8,6 +8,7 @@ import (
 )
 
 // defer always executes at the end of the program
+// LIFO(last-in, first-out)
 
 func main() {
 	fmt.Println("Execution started")
@@ -22,10 +23,11 @@ func main() {
 	}
 	fmt.Printf("%s\n", robots)
 
-	a := "start"
+	a := "First"
 	defer fmt.Println(a) // At this point an is already inserted into defer,
 	// so any value changes after this will not affect this a value
 	a = "end"
+	defer fmt.Println("Second")
 
 	//http.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
 	//	writer.Write([]byte("Hello Go!"))
